@@ -8,11 +8,6 @@ import requests
 from streamlit_lottie import st_lottie
 
 ##Style function
-def local_css(filename):
-        with open(filename) as f:
-           st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-        
-        local_css("style/style.css")
 
 
 
@@ -99,7 +94,7 @@ with st.container():
 
 #---------------Contact Form----------------
 with st.container():
-      #  st.write("----")
+      #  st.write("----")git
         st.header("Get touch with me.")
         st.write("##")
 
@@ -108,16 +103,26 @@ with st.container():
 
         contact_form= """<form action="https://formsubmit.co/Subramanian.natarajan@yahoo.com" method="POST">
                          <input type = "hidden" name="_captcha" value="false">
-                         <input type="text" name="Please enter your name" required>
-                         <input type="email" name="Please enter your email" required>
+                         <input type="text" name="Name" placeholder="Please enter your name" required>
+                         <input type="email" name="name" placeholder="Please enter your email" required>
                          <textarea name="Message" placeholder="Your message here" required></textarea>
                           <button type="submit">Send</button>
                         </form>
                         """
-        left_column, right_column = st.columns(2)
+    #   st.markdown(contact_form, unsafe_allow_html=True)
 
-        with left_column:
-                st.markdown(contact_form, unsafe_allow_html= True)
 
-        with right_column:
-                st.empty()
+      #  left_column, right_column = st.columns(2)
+
+       # with left_column:
+        st.markdown(contact_form, unsafe_allow_html= True)
+
+       # with right_column:
+                #st.empty()
+
+
+def local_css(filename):
+        with open(filename) as f:
+           st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+        
+local_css("style/style.css")
